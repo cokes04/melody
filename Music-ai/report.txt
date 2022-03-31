@@ -1,0 +1,31 @@
+TensorFlow 2.0 Upgrade Script
+-----------------------------
+Converted 1 files
+Detected 0 issues that require attention
+--------------------------------------------------------------------------------
+================================================================================
+Detailed log follows:
+
+================================================================================
+--------------------------------------------------------------------------------
+Processing file './Lyrics-ai/Model.py'
+ outputting to 'aaaaaaaaaaaaa.py'
+--------------------------------------------------------------------------------
+
+ERROR: Failed to parse.
+Traceback (most recent call last):
+  File "C:\Users\kog17\anaconda3\envs\melodyEnv\lib\site-packages\tensorflow\tools\compatibility\ast_edits.py", line 940, in update_string_pasta
+    t = pasta.parse(text)
+  File "C:\Users\kog17\anaconda3\envs\melodyEnv\lib\site-packages\pasta\__init__.py", line 23, in parse
+    t = ast_utils.parse(src)
+  File "C:\Users\kog17\anaconda3\envs\melodyEnv\lib\site-packages\pasta\base\ast_utils.py", line 56, in parse
+    tree = ast.parse(sanitize_source(src))
+  File "C:\Users\kog17\anaconda3\envs\melodyEnv\lib\ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 40
+    print "Build model with input_number: {}, sequence_length: {}, layers_number: {}, " \
+          ^
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print("Build model with input_number: {}, sequence_length: {}, layers_number: {}, " \)?
+
+--------------------------------------------------------------------------------
+
