@@ -2,29 +2,52 @@ import numpy as np
 from music21 import *
 import os
 import re
+import random
 
-path = './generated_music'
+generated_music_path = '../data/output'
+file_name = "test_output"
 
-def compose_music(model, seq_shape, input_emotion, reverse_mapping_table) :
-    notes = generate_notes(model, seq_shape, input_emotion, reverse_mapping_table)
+def compose_music(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table) :
+    print("Compose Music")
+    notes = generate_notes(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table)
     return transform_midi(notes)
 
-def generate_notes(model, seq_shape, input_emotion, reverse_mapping_table) :
+def generate_notes(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table) :
+    print("Generate Notes")
 
-    music_noise = np.random.normal(0, 1, (1, seq_shape[0] - 10, seq_shape[1]))
+    input_emotion = float(input_emotion)
+    note_size = window_size - emotion_size
+    random_pattern = [random.random() for i in range(note_size)]
+    emotion = [input_emotion for i in range(emotion_size)]
 
-    emotion_noise = np.ones((1, 10, seq_shape[1])) * input_emotion
+    pattern = random_pattern + emotion
 
-    noise = np.concatenate((music_noise, emotion_noise), axis=1)
+    prediction_output = []
+    n_vocab = len(reverse_mapping_table)
 
-    predictions = model.predict(noise)
+    for note_index in range(note_count):
+        prediction_input = np.reshape(pattern, (1, len(pattern), 1))
 
-    pred_notes = [x * 242 + 242 for x in predictions[0]]
-    pred_notes = [reverse_mapping_table[int(x)] for x in pred_notes]
+        # 다음 note 예측
+        prediction = model.predict(prediction_input, verbose=0)
+        index = np.argmax(prediction) # 가장 큰 것
 
-    return pred_notes
+        result = reverse_mapping_table[index]
+
+        #결과 저장
+        prediction_output.append(result)
+
+        #다음 패턴
+        pattern = np.insert( pattern, note_size, index / float(n_vocab) )[1:]
+
+
+    print("prediction :", prediction_output)
+
+    return prediction_output
 
 def transform_midi(output) :
+    print("Note -> Midi")
+
     offset = 0
     output_notes = []
 
@@ -54,9 +77,7 @@ def transform_midi(output) :
 
     midi = stream.Stream(output_notes)
 
-    file_list = os.listdir(path)
-
-    file_name = "test_output"
+    file_list = os.listdir(generated_music_path)
 
     index = 0
     if len(file_list) != 0 :
@@ -64,6 +85,6 @@ def transform_midi(output) :
         last_file = file_list[0]
         index = int(re.sub("\D", "", last_file)) + 1
 
-    midi.write('midi', fp=f'./generated_music/{file_name}_{index}.mid')
+    midi.write('midi', fp=f'../data/output/{file_name}_{index}.mid')
 
     return midi

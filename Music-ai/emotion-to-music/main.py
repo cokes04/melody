@@ -2,21 +2,23 @@ from preprocessing import *
 from model import *
 from predict import *
 import tensorflow as tf
+import logging
 
+logging.basicConfig(level=logging.INFO)
 tf.debugging.set_log_device_placement(True)
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.get_logger().setLevel('INFO')
 
-window_size = 10
-
 if __name__ == '__main__':
-    print("main")
+    logging.info("Main")
 
-    train_x, train_y, mapping_table, reverse_mapping_table = get_dataset(window_size, is_save=True)
-    print(mapping_table)
-    print(reverse_mapping_table)
-    print(train_x)
-    print(train_y)
+    train_x, train_y, mapping_table, reverse_mapping_table = load_dataset()
+    model = load_last_model()
 
-    #model = create_model()
+    #history = train(model, train_x, train_y)
+    #show_train_result(history, is_save=True)
+
+    note_count = 300
+    input_emotion = 1
+    compose_music(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table)
