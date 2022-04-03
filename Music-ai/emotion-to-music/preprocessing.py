@@ -42,12 +42,12 @@ def create_dataset(window_size = 50, emotion_size = 5) :
     train_x, train_y = prepare_data(notes_to_emotion, mapping_table, window_size, emotion_size)
 
     logging.info("Save Dataset")
-    with open(f'{input_data_path}/data/dataset', 'wb') as filepath:
+    """with open(f'{input_data_path}/data/dataset', 'wb') as filepath:
         pickle.dump(notes_to_emotion, filepath)
 
     with open(f'{input_data_path}/data/dataset_mapping_table', 'wb') as filepath:
         pickle.dump((mapping_table, reverse_mapping_table), filepath)
-
+"""
     return (train_x, train_y, mapping_table, reverse_mapping_table)
 
 
@@ -67,9 +67,9 @@ def prepare_data(notes_to_emotion, mapping_table, window_size, emotion_size) :
             #OUTPUT
             sequence_out = notes[i + window_size - emotion_size]
             train_y.append(mapping_table[sequence_out])
-            #print(f'{input} -> {mapping_table[sequence_out]}')
+            #print(f'x_train : {input} -> y_tran : {mapping_table[sequence_out]}')
 
-    train_x = normalize_x(train_x, n_vocab, window_size)
+    train_x = normalize_x(train_x, n_vocab, window_size, emotion_size)
     train_y = np_utils.to_categorical(train_y)
 
     return (train_x, train_y)
@@ -118,7 +118,7 @@ def get_notes_of_song(midi) :
     try:
         song = instrument.partitionByInstrument(midi)
         notes_to_parse = song.parts
-    except:  # file has notes in a flat structure
+    except:
         notes_to_parse = [midi.flat.notes]
 
     for part in notes_to_parse:
@@ -158,10 +158,11 @@ def get_note_table(note_set : set) :
     return mapping_table, reverse_mapping_table
 
 # 0 ~ 1 사이로 정규화
-def normalize_x(x, n_vocab, window_size) :
+def normalize_x(x, n_vocab, window_size, emotion_size) :
     n_patterns = len(x)
-    return np.reshape(x, (n_patterns, window_size, 1)) / float(n_vocab)
-
+    x = np.reshape(x, (n_patterns, window_size, 1))
+    x[:, :window_size - emotion_size] /= float(n_vocab)
+    return x
 
 def get_seq_shape() :
     return (window_size, 1)
