@@ -26,7 +26,7 @@ def load_dataset(window_size = 50, emotion_size = 5) :
 
     return (train_x, train_y, mapping_table, reverse_mapping_table)
 
-def create_dataset(window_size = 50, emotion_size = 5) :
+def create_dataset(window_size = 100, emotion_size = 10) :
     logging.info("Create Dataset")
 
     notes_to_emotion = []
@@ -39,15 +39,17 @@ def create_dataset(window_size = 50, emotion_size = 5) :
             notes_to_emotion.append((notes, song_to_emotions[name]))
         else: logging.warning(f"{name} : Emotion Is Null")
 
+
     train_x, train_y = prepare_data(notes_to_emotion, mapping_table, window_size, emotion_size)
 
+
     logging.info("Save Dataset")
-    """with open(f'{input_data_path}/data/dataset', 'wb') as filepath:
+    with open(f'{input_data_path}/data/dataset', 'wb') as filepath:
         pickle.dump(notes_to_emotion, filepath)
 
     with open(f'{input_data_path}/data/dataset_mapping_table', 'wb') as filepath:
         pickle.dump((mapping_table, reverse_mapping_table), filepath)
-"""
+
     return (train_x, train_y, mapping_table, reverse_mapping_table)
 
 

@@ -3,11 +3,12 @@ from music21 import *
 import os
 import re
 import random
+from preprocessing import window_size, emotion_size
 
-generated_music_path = '../data/output'
+generated_music_path = './result'
 file_name = "test_output"
 
-def compose_music(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table) :
+def compose_music(model, note_count, input_emotion, reverse_mapping_table) :
     print("Compose Music")
     notes = generate_notes(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table)
     return transform_midi(notes)
@@ -21,7 +22,7 @@ def generate_notes(model, note_count, input_emotion, window_size, emotion_size, 
     emotion = [input_emotion for i in range(emotion_size)]
 
     pattern = random_pattern + emotion
-
+    print(pattern)
     prediction_output = []
     n_vocab = len(reverse_mapping_table)
 
@@ -77,6 +78,12 @@ def transform_midi(output) :
 
     midi = stream.Stream(output_notes)
 
+    save_midi(midi)
+
+    return midi
+
+def save_midi(midi) :
+    if not os.path.exists(generated_music_path): os.makedirs(generated_music_path)
     file_list = os.listdir(generated_music_path)
 
     index = 0
@@ -85,6 +92,4 @@ def transform_midi(output) :
         last_file = file_list[0]
         index = int(re.sub("\D", "", last_file)) + 1
 
-    midi.write('midi', fp=f'../data/output/{file_name}_{index}.mid')
-
-    return midi
+    midi.write('midi', fp=f'{generated_music_path}/{file_name}_{index}.mid')

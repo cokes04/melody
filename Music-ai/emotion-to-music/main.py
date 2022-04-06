@@ -14,12 +14,11 @@ if __name__ == '__main__':
     logging.info("Main")
 
     train_x, train_y, mapping_table, reverse_mapping_table = load_dataset()
-    print(train_x[0])
     model = load_last_model()
+    
+    #history = train(model, train_x, train_y, epochs=100)
+    #show_train_result(history, is_save=True)
 
-    history = train(model, train_x, train_y)
-    show_train_result(history, is_save=True)
-
-    #note_count = 300
-    #input_emotion = 1
-    #compose_music(model, note_count, input_emotion, window_size, emotion_size, reverse_mapping_table)
+    note_count = 500
+    input_emotion = 4
+    compose_music(model, note_count, input_emotion, reverse_mapping_table)
