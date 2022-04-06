@@ -79,13 +79,12 @@ def train(model, train_x, train_y) :
     )
     callbacks_list = [checkpoint]
 
-    history = model.fit(train_x, train_y, epochs=10, batch_size=64, callbacks=callbacks_list)
+    history = model.fit(train_x, train_y, epochs=2, batch_size=64, callbacks=callbacks_list)
     return history
 
 
 def show_train_result(history, is_save=True) :
     plt.plot(history.history['accuracy'])
-    plt.plot(history.history['val_accuracy'])
     plt.title('Model accuracy')
     plt.xlabel('Epoch')
     plt.ylabel('Accuracy')
