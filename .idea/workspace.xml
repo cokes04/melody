@@ -20,19 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/emotion-to-music/constants.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/emotion-to-music/dataset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/emotion-to-music/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/data/input/EMOPIA_2/data/dataset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/data/input/EMOPIA_2/data/dataset_mapping_table" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/model.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/emotion-to-music/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/models/LSTM-2022-04-06T183316-weights-100-1.9006.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/emotion-to-music/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/preprocessing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/emotion-to-music/train_result-2022-04-06T223318.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,27 +50,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="exceleditor.install" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Music-ai/data/delighted" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Music-ai/src" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\emotion-to-music" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\data\tense" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\data\relaxed" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\src" />
       <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\data\delighted" />
       <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\emotion-to-music" />
       <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\music-to-emotion" />
       <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\data\input\midis\dataverse_files" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\data\input\midis\PMEmo2019" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\data" />
+      <recent name="C:\Users\kog17\PycharmProjects\melody" />
+      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai" />
+      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models" />
+      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\emotion-to-music" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate">
-    <configuration name="dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.model (1)">
+    <configuration name="dataset (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="melody" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -87,11 +78,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/emotion-to-music" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/emotion-to-music/dataset.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/dataset.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -142,7 +133,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mlp_gan" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="model (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="melody" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,11 +141,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/CHAM_GO/text_to_music-master/midi-lstm-gan" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/CHAM_GO/text_to_music-master/midi-lstm-gan/mlp_gan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/model.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -207,11 +198,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.model (1)" />
+        <item itemvalue="Python.dataset (1)" />
         <item itemvalue="Python.generate" />
         <item itemvalue="Python.train" />
         <item itemvalue="Python.model" />
-        <item itemvalue="Python.dataset" />
-        <item itemvalue="Python.dataset" />
       </list>
     </recent_temporary>
   </component>
@@ -241,10 +232,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1649654255863">
+    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1650093510141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1649654255863" />
+    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1650093510141" />
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1648461536340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -253,41 +244,41 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1649255569202" />
-    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl" timestamp="1650079199447">
+    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl" timestamp="1650092093928">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1650079199447" />
-    <state width="1899" height="283" key="GridCell.Tab.0.bottom" timestamp="1650090098879">
+    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1650092093928" />
+    <state width="1899" height="283" key="GridCell.Tab.0.bottom" timestamp="1650268927553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1650090098879" />
-    <state width="1899" height="283" key="GridCell.Tab.0.center" timestamp="1650090098879">
+    <state width="1899" height="283" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1650268927553" />
+    <state width="1899" height="283" key="GridCell.Tab.0.center" timestamp="1650268927552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1650090098879" />
-    <state width="1899" height="283" key="GridCell.Tab.0.left" timestamp="1650090098879">
+    <state width="1899" height="283" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1650268927552" />
+    <state width="1899" height="283" key="GridCell.Tab.0.left" timestamp="1650268927552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1650090098879" />
-    <state width="1899" height="283" key="GridCell.Tab.0.right" timestamp="1650090098879">
+    <state width="1899" height="283" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1650268927552" />
+    <state width="1899" height="283" key="GridCell.Tab.0.right" timestamp="1650268927552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1650090098879" />
+    <state width="1899" height="283" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1650268927552" />
     <state x="540" y="254" key="IDE.errors.dialog" timestamp="1649251076045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1649251076045" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1650070011805">
+    <state x="461" y="164" key="SettingsEditor" timestamp="1650092118091">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1650070011805" />
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1650092118091" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1649247527106">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1649247527106" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1650079105977">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1650268731260">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1650079105977" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1650268731260" />
   </component>
 </project>

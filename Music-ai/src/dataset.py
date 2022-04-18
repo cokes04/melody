@@ -38,7 +38,8 @@ def get_seq(song) :
         for i in range(0, len(track.events), 2):
             deltaTime = track.events[i]
             midiEvent = track.events[i+1]
-
+            print(deltaTime)
+            print(midiEvent)
             if deltaTime.time != 0 \
                     and midiEvent.type is ChannelVoiceMessages.NOTE_ON \
                     or midiEvent.type is ChannelVoiceMessages.NOTE_OFF:
@@ -115,10 +116,10 @@ def create_dataset(in_time_steps = IN_SEQ_LEN , out_time_steps = OUT_SEQ_LEN) :
     time_data = np.array(time_data)
     emotion_data = np.array(emotion_data)
 
-    print(note_data.shape, time_data.shape, emotion_data.shape)
-
     note_target = np.array(note_target)
     time_target = np.array(time_target)
+
+    print(note_data.shape, time_data.shape, emotion_data.shape)
     print(note_target.shape, time_target.shape)
 
     x = [note_data, time_data, emotion_data]
