@@ -1,4 +1,11 @@
-1q delighted 아주 기쁜
-2q tense 긴장된
-3q gloomy 우울한
-4q relaxed 이완된
+delighted 	    기쁜(신나는)
+enthusiastic    열정적인(폭력적인)
+gloomy 		    슬픈(우울한)
+mysterious 	    신비로운(몽환적인)
+relaxed 	    편안한(이완된)
+tense 		    공포스러운(긴장된)
+
+
+
+
+
