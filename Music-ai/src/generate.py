@@ -6,7 +6,7 @@ import time
 from dataset.load import *
 from model import *
 
-def main(emotion = "delighted", music_len = 200, music_num = 1, noise_num = 5) :
+def main(emotion = "gloomy", music_len = 200, music_num = 3, noise_num = 3) :
     print("Generate Main")
     """parser = argparse.ArgumentParser(description='Generates music.')
     parser.add_argument('--emotion', default=0, type=int)
@@ -20,8 +20,6 @@ def main(emotion = "delighted", music_len = 200, music_num = 1, noise_num = 5) :
     if args.music_len != None:
         music_len = args.music_len
         print("Seleted Music Length : ", music_len)"""
-
-    if emotion == "aversion" :  emotion = "tense"
 
     model, att_model = load_models()
     data_for_emotion = load_data()
@@ -154,13 +152,11 @@ def get_start_sequence(data_for_emotion : dict, emotion, noise_num, note_to_int,
 def generate(model, emotion, start_notes_sequence, start_duration_sequence, music_len = 500, timestep = SEQ_LEN) :
     print("Generate Music")
 
-    temp = {"delighted" : (0.5, 0),
-            "enthusiastic" : (0.5, 0),
-            "gloomy" : (0.05, 1.25),
-            "mysterious" : (0.5, 1),
-            "relaxed" : (0.75, 0.75),
-            "tense" : (0.05, 0.75)
-            }
+    temp = {
+        "delighted" : (0.75, 0),
+        "gloomy" : (0, 1.25),
+        "relaxed" : (0.5, 0.5),
+        }
 
     notes_temp, duration_temp = temp[emotion]
 

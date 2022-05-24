@@ -2,12 +2,12 @@ import os
 from pathlib import Path
 import math
 
-EMOTIONS = ["delighted", "enthusiastic", "gloomy", "mysterious", "relaxed", "tense"]
+EMOTIONS = ["delighted", "gloomy", "relaxed"]
 
-NUM_NOTES = 2150   #2150 #9153
-NUM_DURATION = 124 #124 #109
+NUM_NOTES = 2068   #2068 #9153
+NUM_DURATION = 133  #133 #109
 
-NUM_EMOTION = 6
+NUM_EMOTION = 3
 
 SEQ_LEN = 128
 
