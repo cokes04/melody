@@ -2,14 +2,10 @@ package com.example.melody;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 import com.example.melody.databinding.ActivityMainBinding;
 
@@ -22,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
-    private Button generate_button;
+    private Button generateButton;
+    private Button playButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +28,15 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        generate_button = findViewById(R.id.generate_button);
-        generate_button.setOnClickListener( (View v) -> {
-            Intent intent = new Intent(getApplicationContext(), GenerateActivity.class);
+        generateButton = findViewById(R.id.go_generate_button);
+        generateButton.setOnClickListener( (View v) -> {
+            Intent intent = new Intent(getApplicationContext(), GenerateMusicActivity.class);
+            startActivity(intent);
+        });
+
+        playButton = findViewById(R.id.go_play_button);
+        playButton.setOnClickListener( (View v) -> {
+            Intent intent = new Intent(getApplicationContext(), PlayMusicActivity.class);
             startActivity(intent);
         });
     }
