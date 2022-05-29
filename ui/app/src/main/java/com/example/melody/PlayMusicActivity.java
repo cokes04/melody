@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.media.MediaPlayer;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,12 @@ public class PlayMusicActivity extends AppCompatActivity {
     public static final String SET_MUSIC_KEY = "music";
 
     private MediaPlayer mediaPlayer;
+
+    private Handler seekbarUpdateHandler = new Handler();
+    private Runnable updateSeekbar = getUpdateSeekbarRunnable();
+
     private SeekBar seekbar;
+
     private Button playStopButton;
     private Button uploadMusicButton;
 
@@ -39,8 +45,6 @@ public class PlayMusicActivity extends AppCompatActivity {
             musicToPlay = R.raw.test;
 
         seekbar = (SeekBar) findViewById(R.id.seekBar);
-        seekbar.setOnSeekBarChangeListener( getOnSeekBarChangeListener() );
-
         playStopButton = (Button) findViewById(R.id.control_music_button);
         uploadMusicButton = (Button) findViewById(R.id.upload_music_button);
 
@@ -50,32 +54,35 @@ public class PlayMusicActivity extends AppCompatActivity {
                 return;
             }
 
-            if (mediaPlayer == null)
+            if (mediaPlayer == null) {
                 setMediaPlayer();
+                seekbar.setOnSeekBarChangeListener( getOnSeekBarChangeListener() );
+            }
 
             if(mediaPlayer.isPlaying()){
                 mediaPlayer.pause();
                 playStopButton.setText("재생");
-                runSeekbar();
-
+                seekbarUpdateHandler.removeCallbacks(updateSeekbar);
             }else {
                 mediaPlayer.start();
                 playStopButton.setText("정지");
+                seekbarUpdateHandler.postDelayed(updateSeekbar, 0);
             }
+
+
         });
 
         uploadMusicButton.setOnClickListener((View view) ->{
-            // 음악 가져오는 기능 구현
+            // 음악 불러오는 기능 구현
         });
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
+        seekbarUpdateHandler.removeCallbacks(updateSeekbar);
+        seekbar = null;
+        clearMediaPlayer();
     }
 
     private void setMusicToPlayFromActivity(){
@@ -86,11 +93,24 @@ public class PlayMusicActivity extends AppCompatActivity {
 
     private void setMediaPlayer() {
         mediaPlayer = MediaPlayer.create(PlayMusicActivity.this, musicToPlay);
+        seekbar.setMax( mediaPlayer.getDuration() );
 
         mediaPlayer.setOnCompletionListener( (MediaPlayer mediaPlayer) -> {
+            seekbarUpdateHandler.removeCallbacks(updateSeekbar);
             mediaPlayer.release();
+            this.mediaPlayer = null;
             playStopButton.setText("재생");
         });
+    }
+
+    private Runnable getUpdateSeekbarRunnable() {
+       return new Runnable() {
+            @Override
+            public void run() {
+                seekbar.setProgress(mediaPlayer.getCurrentPosition());
+                seekbarUpdateHandler.postDelayed(this, 50);
+            }
+        };
     }
 
     private SeekBar.OnSeekBarChangeListener getOnSeekBarChangeListener() {
@@ -107,23 +127,13 @@ public class PlayMusicActivity extends AppCompatActivity {
         };
     }
 
-    private void runSeekbar(){
-        seekbar.setMax( mediaPlayer.getDuration() );
-
-        // 0.5초마다 seekbar 움직임
-        new Thread( () -> {
-            while(mediaPlayer.isPlaying()){
-                try{
-                    Thread.sleep(500);
-                } catch(Exception e){
-                    e.printStackTrace();
-                }
-                seekbar.setProgress(mediaPlayer.getCurrentPosition());
-            }
-        }).start();
+    private void clearMediaPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
+        mediaPlayer = null;
     }
-
-
     private boolean isExistsMusic(){
         return musicToPlay != NON_EXISTENT_MUSIC;
     }

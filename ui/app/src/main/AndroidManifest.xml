@@ -17,9 +17,6 @@
         android:theme="@style/Theme.Melody"
         tools:targetApi="31">
         <activity
-            android:name=".PlayMusicActivity"
-            android:exported="false" />
-        <activity
             android:name=".GenerateMusicActivity"
             android:exported="false" />
         <activity
@@ -33,7 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".PlayMusicActivity"
+            android:exported="false" />
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.example.melody.fileprovider"
