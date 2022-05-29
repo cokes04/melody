@@ -1,12 +1,11 @@
 from music21 import *
 import numpy as np
-import argparse
 import time
 
 from dataset.load import *
 from model import *
 
-def main(emotion = "gloomy", music_len = 200, noise_num = 3) :
+def main(emotion, music_len, noise_num) :
     print("Generate Main")
     model, att_model = load_models()
     data_for_emotion = load_data()
@@ -154,7 +153,3 @@ def generate(model, emotion, start_notes_sequence, start_duration_sequence, musi
         durations_input_sequence = durations_input_sequence[1:]
 
     return prediction_output
-
-
-if __name__ == '__main__':
-    main()

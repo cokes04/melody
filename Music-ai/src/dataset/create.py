@@ -2,15 +2,10 @@ from music21 import *
 import numpy as np
 import tensorflow.keras.utils as np_utils
 from functools import reduce
-import pickle
-import math
-import os
 
 from dataset.load import *
-from util import *
 
 def main() :
-
     print("Crate Dataset Main")
     data_for_emotion, note_names, duration_names = create_data()
     tables = create_tables(note_names, duration_names)
@@ -33,30 +28,6 @@ def split_to_notes_and_durations(data_for_emotion) :
         duration_data += ds
 
     return note_data, duration_data
-
-def insertStreamAtt(a, b) :
-    a.atSoundingPitch = b.atSoundingPitch
-    a.clef = b.clef
-    a.duration = b.duration
-    #a.elements = b.elements
-    a.finalBarline = b.finalBarline
-    a.keySignature = b.keySignature
-    a.metadata = b.metadata
-    a.seconds = b.seconds
-    a.staffLines = b.staffLines
-    a.timeSignature = b.timeSignature
-
-def insertMusic21ObectAtt(a, b) :
-    try:
-        a.activeSite = b.activeSite
-    except :
-        None
-    a.derivation = b.derivation
-    a.editorial = b.editorial
-    a.offset = b.offset
-    a.priority = b.priority
-    a.quarterLength = b.quarterLength
-    a.style = b.style
 
 def get_seq(mu, length = 2, chordify = True) :
     notes = []

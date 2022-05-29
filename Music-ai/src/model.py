@@ -1,10 +1,9 @@
 from tensorflow.keras.models import Model
-from tensorflow.keras.layers import LSTM, Dense, Dropout, Activation, Input, Embedding
+from tensorflow.keras.layers import LSTM, Dense, Activation, Input, Embedding
 from tensorflow.keras.layers import Concatenate, RepeatVector, Lambda, Permute, Reshape, Multiply
 import tensorflow.keras.backend as K
-from tensorflow.keras.optimizers import Adam, SGD
+from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.utils import plot_model
-import tensorflow as tf
 from constants import *
 
 def build_models(time_steps = SEQ_LEN, embed_size = 100, rnn_units=256):
@@ -49,8 +48,3 @@ def load_models(path = MODEL_PATH):
 
     model.summary()
     return model, att_model
-
-
-if __name__=="__main__" :
-    print("Model Main")
-    build_models()

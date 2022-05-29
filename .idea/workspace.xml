@@ -21,7 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/util.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +63,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kog17\melody\Music-ai\models\2" />
-      <recent name="C:\Users\kog17\melody\Music-ai\models\before\2" />
-      <recent name="C:\Users\kog17\melody\Music-ai\models\before" />
-      <recent name="C:\Users\kog17\melody\Music-ai\dataset\before" />
-      <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kog17\melody\Music-ai\dataset\2" />
       <recent name="C:\Users\kog17\melody\Music-ai\models" />
       <recent name="C:\Users\kog17\melody\Music-ai\dataset" />
       <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
       <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\melody\Music-ai\models\2" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models\before\2" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models\before" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\before" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
     </key>
   </component>
   <component name="RunManager" selected="Python.generate">
