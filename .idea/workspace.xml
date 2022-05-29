@@ -20,24 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/abc.midi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/src/dataset/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/src/dataset/load.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/src/model.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/app/src/main/java/com/example/melody/GenerateMusicActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/data/delighted/Q1__8v0MFBZoco_0.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/data/gloomy/Q2_b8HVQtIoBYU_1.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/data/relaxed/Q4_vJ77eDxHezE_0.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/data/tense/Q3_TonQX8XbvX8_1.mid" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/dataset/dataset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/melodyEnv.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/melodyEnv.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/generate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/model.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/app/src/main/java/com/example/melody/GenerateActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/app/src/main/res/layout/activity_generate.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -64,50 +55,31 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="exceleditor.install" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Music-ai/models" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models\excluded_etc_chordify_sixth_slice_four" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\dataset\excluded_etc_chordify_fifth_slice_four" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\dataset\excluded_etc_chordify_third_slice" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models\excluded_etc_chordify_quarter" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models\aaaaa" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models\2" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models\before\2" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models\before" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\before" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\2" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
       <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\dataset" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\dataset\excluded_etc_chordify_sixth_slice_four" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\dataset\excluded_etc_chordify_fifth_slice_four" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\dataset\excluded_etc_chordify_quarter_slice_four" />
     </key>
   </component>
   <component name="RunManager" selected="Python.generate">
-    <configuration name="constants" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="melody" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/constants.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="create (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="melody" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,6 +143,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="tmp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="melody" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/tmp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="train (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="melody" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -195,10 +188,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.generate" />
-        <item itemvalue="Python.create (1)" />
         <item itemvalue="Python.train (1)" />
         <item itemvalue="Python.model" />
-        <item itemvalue="Python.constants" />
+        <item itemvalue="Python.create (1)" />
+        <item itemvalue="Python.tmp" />
       </list>
     </recent_temporary>
   </component>
@@ -214,6 +207,16 @@
       <updated>1648446183409</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -231,10 +234,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1650455588468">
+    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1652658549804">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1650455588468" />
+    <state x="602" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1652658549804" />
     <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1648461536340">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -243,50 +246,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1649255569202" />
-    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl" timestamp="1650536355689">
+    <state x="685" y="435" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog" timestamp="1653389156847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1650536355689" />
-    <state width="1899" height="330" key="GridCell.Tab.0.bottom" timestamp="1650541559962">
+    <state x="685" y="435" key="#com.jetbrains.python.refactoring.move.PyMoveModuleMembersDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653389156847" />
+    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl" timestamp="1653282661297">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1650541559962" />
-    <state width="1899" height="330" key="GridCell.Tab.0.center" timestamp="1650541559962">
+    <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1653282661297" />
+    <state width="1575" height="256" key="GridCell.Tab.0.bottom" timestamp="1653390482989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1650541559962" />
-    <state width="1899" height="330" key="GridCell.Tab.0.left" timestamp="1650541559962">
+    <state width="1575" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
+    <state width="1575" height="256" key="GridCell.Tab.0.center" timestamp="1653390482989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1650541559962" />
-    <state width="1899" height="330" key="GridCell.Tab.0.right" timestamp="1650541559962">
+    <state width="1575" height="256" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
+    <state width="1575" height="256" key="GridCell.Tab.0.left" timestamp="1653390482989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1650541559962" />
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1650539519727">
+    <state width="1575" height="256" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
+    <state width="1575" height="256" key="GridCell.Tab.0.right" timestamp="1653390482989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1650539519727" />
-    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1650539519727">
+    <state width="1575" height="256" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1650542207484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1650539519727" />
-    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1650539519727">
+    <state width="1899" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1650542207484" />
+    <state width="1899" height="348" key="GridCell.Tab.1.center" timestamp="1650542207484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1650539519727" />
-    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1650539519727">
+    <state width="1899" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1650542207484" />
+    <state width="1899" height="348" key="GridCell.Tab.1.left" timestamp="1650542207484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1650539519727" />
-    <state x="540" y="254" key="IDE.errors.dialog" timestamp="1649251076045">
+    <state width="1899" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1650542207484" />
+    <state width="1899" height="348" key="GridCell.Tab.1.right" timestamp="1650542207484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1649251076045" />
-    <state x="461" y="167" width="998" height="708" key="SettingsEditor" timestamp="1650447808224">
+    <state width="1899" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1650542207484" />
+    <state x="540" y="254" key="IDE.errors.dialog" timestamp="1653287770789">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="167" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1650447808224" />
+    <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653287770789" />
+    <state x="869" y="219" key="RollbackChangesDialog" timestamp="1653804302289">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="869" y="219" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653804302289" />
+    <state x="461" y="167" width="998" height="708" key="SettingsEditor" timestamp="1652331329295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="167" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1652331329295" />
     <state x="754" y="297" key="chooseDestDirectoryDialog" timestamp="1650469639806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -299,10 +310,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1650356634084" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1650522592609">
+    <state x="765" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1653804264737">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1650522592609" />
+    <state x="765" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1653804264737" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1653282360628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1653282360628" />
     <state x="682" y="431" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1650502846175">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
