@@ -6,32 +6,18 @@ import time
 from dataset.load import *
 from model import *
 
-def main(emotion = "gloomy", music_len = 200, music_num = 3, noise_num = 3) :
+def main(emotion = "gloomy", music_len = 200, noise_num = 3) :
     print("Generate Main")
-    """parser = argparse.ArgumentParser(description='Generates music.')
-    parser.add_argument('--emotion', default=0, type=int)
-    parser.add_argument('--music_len', default=200, type=int)
-    args = parser.parse_args()
-
-    if args.emotion != None:
-        emotion = EMOTIONS[args.emotion]
-        print("Seleted Emotion : ", emotion)
-
-    if args.music_len != None:
-        music_len = args.music_len
-        print("Seleted Music Length : ", music_len)"""
-
     model, att_model = load_models()
     data_for_emotion = load_data()
 
     note_to_int, int_to_note, duration_to_int, int_to_duration = load_tables()
 
-    for i in range(music_num) :
-        #random_index, start_notes_sequence, start_duration_sequence = get_start_random_sequence()
-        random_index, start_notes_sequence, start_duration_sequence = get_start_sequence(data_for_emotion, emotion, noise_num, note_to_int, duration_to_int)
-        prediction_output = generate(model, emotion, start_notes_sequence, start_duration_sequence, music_len)
-        midi_stream = convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=True)
-        #play_midi(midi_stream)
+    random_index, start_notes_sequence, start_duration_sequence = get_start_sequence(data_for_emotion, emotion, noise_num, note_to_int, duration_to_int)
+    prediction_output = generate(model, emotion, start_notes_sequence, start_duration_sequence, music_len)
+    midi_stream = convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=False)
+
+    return midi_stream
 
 def convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=True) :
     print("Convert Midi")
@@ -43,23 +29,10 @@ def convert_midi(prediction_output, int_to_note, int_to_duration, emotion, rando
         note_pattern, duration_pattern = pattern
         note_pattern = int_to_note[note_pattern]
         duration_pattern = int_to_duration[duration_pattern]
-        # print( "("+note_pattern+" "+str(duration_pattern)+")" , end=' ')
 
         # chord
         if ('.' in note_pattern):
             notes_in_chord = note_pattern.split('.')
-
-            """a = len(notes_in_chord) // 4
-            for i in range(a+1) :
-                chord_notes = []
-                for n in notes_in_chord[i * 4: (i + 1) * 4] :
-                    new_note = note.Note(n)
-                    new_note.duration = duration.Duration(duration_pattern)
-                    new_note.storedInstrument = instrument.Piano()
-                    chord_notes.append( new_note )
-
-                if len(chord_notes) != 0:
-                    part.append(chord.Chord(chord_notes))"""
 
             chord_notes = []
             for current_note in notes_in_chord:
@@ -84,7 +57,6 @@ def convert_midi(prediction_output, int_to_note, int_to_duration, emotion, rando
             part.append(new_note)
 
 
-    #print()
     midi_stream = midi_stream.chordify()
     if save :
         timestr = time.strftime("%Y%m%d-%H%M%S")

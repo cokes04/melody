@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ui/app/src/main/java/com/example/melody/GenerateMusicActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/app/src/main/java/com/example/melody/GenerateActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/app/src/main/res/layout/activity_generate.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -290,10 +284,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="254" key="IDE.errors.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653287770789" />
-    <state x="869" y="219" key="RollbackChangesDialog" timestamp="1653804302289">
+    <state x="869" y="219" key="RollbackChangesDialog" timestamp="1653804373513">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="869" y="219" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653804302289" />
+    <state x="869" y="219" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653804373513" />
     <state x="461" y="167" width="998" height="708" key="SettingsEditor" timestamp="1652331329295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -306,6 +300,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1649247527106" />
+    <state x="339" y="118" width="1413" height="762" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1653804694480">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="339" y="118" width="1413" height="762" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653804694480" />
     <state x="561" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1650356634084">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
