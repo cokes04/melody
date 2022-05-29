@@ -30,20 +30,18 @@ config.gpu_options.allow_growth = True
 config.gpu_options.per_process_gpu_memory_fraction = 0.99
 session = tf.compat.v1.Session(config=config)
 
-def main(numerator = 1, denominator = 1) :
+def main() :
     model, att_model = load_models()
-    x, y = get_dataset(numerator, denominator)
+    x, y = get_dataset()
 
     print(x[0].shape, x[1].shape)
     print(y[0].shape, y[1].shape)
 
     print("input note")
     print(list(x[0][0]))
-    print(list(x[0][1]))
 
     print("input duration")
     print(list(x[1][0]))
-    print(list(x[1][1]))
 
     print("target note")
     print(y[0])
@@ -53,13 +51,12 @@ def main(numerator = 1, denominator = 1) :
 
     history = train(model, x, y)
 
-
-def get_dataset(numerator, denominator):
+def get_dataset():
     datas = load_data()
     tables = load_tables()
 
     note_data, duration_data = split_to_notes_and_durations(datas)
-    dataset = create_dataset(note_data, duration_data, tables, numerator=numerator, denominator=denominator, save=False)
+    dataset = create_dataset(note_data, duration_data, tables, save=False)
     return dataset
 
 def train(model, train_x, train_y) :
@@ -98,12 +95,11 @@ def train(model, train_x, train_y) :
     history = model.fit(train_x,
                          train_y,
                          epochs=200,
-                         batch_size=32,
+                         batch_size=128,
                          validation_split=0.2,
                          callbacks=callbacks_list,
                          shuffle=True)
     return history
-
 
 if __name__ == '__main__':
     main()

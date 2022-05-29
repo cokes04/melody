@@ -10,20 +10,18 @@ from dataset.load import *
 from util import *
 
 def main() :
+
     print("Crate Dataset Main")
     data_for_emotion, note_names, duration_names = create_data()
     tables = create_tables(note_names, duration_names)
 
-def split(data, time_steps, n, denominator):
-    # n/denominator 나눠서 학습
-    assert n<=denominator
+def split(data, time_steps):
 
     dataX, dataY = [], []
 
-    for i in range(0, len(data) -(n-1+time_steps), denominator):
-        a = i + n - 1
-        dataX.append(data[a : a + time_steps])
-        dataY.append(data[a + time_steps])
+    for i in range(0, len(data) - time_steps):
+        dataX.append(data[i : i + time_steps])
+        dataY.append(data[i + time_steps])
 
     return dataX, dataY
 
@@ -60,18 +58,21 @@ def insertMusic21ObectAtt(a, b) :
     a.quarterLength = b.quarterLength
     a.style = b.style
 
-def get_seq(mu, chordify = True) :
+def get_seq(mu, length = 2, chordify = True) :
     notes = []
     durations = []
 
     if chordify :
-        elements = mu.chordify().transpose(1).flat
+        aInterval = interval.Interval('d5')
+        elements = mu.chordify()\
+            .transpose(aInterval)\
+            .flat
     else:
         elements = mu.flat.notes.recurse()
 
-    aa = stream.Stream()
+    st = stream.Stream()
     pp = stream.Part()
-    aa.append(pp)
+    st.append(pp)
 
     for element in elements :
         pp.append(element)
@@ -84,18 +85,20 @@ def get_seq(mu, chordify = True) :
                 durations.append(element.duration.quarterLength)
 
         elif isinstance(element, chord.Chord):
-            a = len(element.pitches) // 4
+            a = len(element.pitches) // length
             for i in range(a+1) :
-                n = '.'.join(n.nameWithOctave for n in element.pitches[i*4 : (i+1)*4])
+                n = '.'.join(n.nameWithOctave for n in element.pitches[i*length : (i+1)*length])
                 if n != '':
                     notes.append(n)
-                    durations.append(element.duration.quarterLength)
+                    du = element.duration.quarterLength
+                    durations.append(du)
 
             #notes.append('.'.join(n.nameWithOctave for n in element.pitches))
             #durations.append(element.duration.quarterLength)
 
-    aa.write('midi', fp='../../abc.midi')
-    raise Exception
+    #st.write('midi', fp='../../tmp.midi')
+    #raise Exception
+
     assert len(notes) == len(durations)
     return notes, durations
 
@@ -103,7 +106,7 @@ def get_seqs(midi_dir) :
     seqs = []
 
     for root, dirs, files in os.walk(midi_dir):
-        length = len(files)/6
+        length = len(files)
         print(length)
         i = 0
         for f in files :
@@ -123,7 +126,7 @@ def get_seqs(midi_dir) :
 
     return seqs
 
-def create_data(dir = DATA_DIR, emotions = EMOTIONS, includ_etc = False, save = True) :
+def create_data(dir = DATA_DIR, emotions = EMOTIONS, save = True) :
     print("Create Data")
 
     data_for_emotion = dict()
@@ -131,8 +134,6 @@ def create_data(dir = DATA_DIR, emotions = EMOTIONS, includ_etc = False, save = 
     note_names = set()
     duration_names = set()
 
-    if includ_etc :
-        emotions.append("etc")
     for i, emotion in enumerate(emotions) :
         path = os.path.join(dir, emotion)
         print("@@@@@@@@@@@@@@@@@@@@@@")
@@ -204,7 +205,7 @@ def create_tables(note_names, duration_names, save = True) :
 
     return note_to_int, int_to_note, duration_to_int, int_to_duration
 
-def create_dataset(note_data, duration_data, tables, time_steps = SEQ_LEN, numerator=1, denominator=1,  save = True) :
+def create_dataset(note_data, duration_data, tables, time_steps = SEQ_LEN, save = True) :
     print("Create Dataset")
     note_to_int, int_to_note, duration_to_int, int_to_duration = tables
 
@@ -217,11 +218,11 @@ def create_dataset(note_data, duration_data, tables, time_steps = SEQ_LEN, numer
         note_buffer = [note_to_int[n] for n in notes]
         duration_buffer = [duration_to_int[d] for d in durations]
 
-        note_train, note_label = split(note_buffer, time_steps, numerator, denominator)
+        note_train, note_label = split(note_buffer, time_steps)
         note_input += note_train
         note_target += note_label
 
-        duration_train, duration_label = split(duration_buffer, time_steps, numerator, denominator)
+        duration_train, duration_label = split(duration_buffer, time_steps)
         duration_input += duration_train
         duration_target += duration_label
 
