@@ -1,6 +1,6 @@
 from music21 import *
 import numpy as np
-import tensorflow.keras.utils as np_utils
+import tensorflow.python.keras.utils as np_utils
 from functools import reduce
 
 from dataset.load import *

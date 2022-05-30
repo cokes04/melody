@@ -1,9 +1,8 @@
-from tensorflow.keras.models import Model
-from tensorflow.keras.layers import LSTM, Dense, Activation, Input, Embedding
-from tensorflow.keras.layers import Concatenate, RepeatVector, Lambda, Permute, Reshape, Multiply
-import tensorflow.keras.backend as K
-from tensorflow.keras.optimizers import SGD
-from tensorflow.keras.utils import plot_model
+from tensorflow.python.keras.models import Model
+from tensorflow.python.keras.layers import LSTM, Dense, Activation, Input, Embedding
+from tensorflow.python.keras.layers import Concatenate, RepeatVector, Lambda, Permute, Reshape, Multiply
+import tensorflow.python.keras.backend as K
+from tensorflow.python.keras.optimizers import adam_v2
 from constants import *
 
 def build_models(time_steps = SEQ_LEN, embed_size = 100, rnn_units=256):
@@ -31,10 +30,9 @@ def build_models(time_steps = SEQ_LEN, embed_size = 100, rnn_units=256):
     att_model = Model([note_in, duration_in], alpha)
     model = Model([note_in, duration_in], [note_out, duration_out])
 
-    opti = SGD(learning_rate=0.003, )
+    opti = adam_v2.Adam(learning_rate=0.003, )
     model.compile(loss=['categorical_crossentropy', 'categorical_crossentropy'], optimizer=opti, metrics='accuracy')
 
-    plot_model(model, to_file='model.png', show_shapes=True, show_layer_names=True)
     return model, att_model
 
 def load_models(path = MODEL_PATH):

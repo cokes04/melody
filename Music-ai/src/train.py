@@ -1,5 +1,4 @@
-import matplotlib.pyplot as plt
-from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
+from tensorflow.python.keras.callbacks import ModelCheckpoint, EarlyStopping
 import tensorflow as tf
 import os
 

@@ -5,7 +5,7 @@ import time
 from dataset.load import *
 from model import *
 
-def main(emotion, music_len, noise_num) :
+def main(emotion, music_len, noise_num, save) :
     print("Generate Main")
     model, att_model = load_models()
     data_for_emotion = load_data()
@@ -14,7 +14,7 @@ def main(emotion, music_len, noise_num) :
 
     random_index, start_notes_sequence, start_duration_sequence = get_start_sequence(data_for_emotion, emotion, noise_num, note_to_int, duration_to_int)
     prediction_output = generate(model, emotion, start_notes_sequence, start_duration_sequence, music_len)
-    midi_stream = convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=False)
+    midi_stream = convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=save)
 
     return midi_stream
 
@@ -153,3 +153,10 @@ def generate(model, emotion, start_notes_sequence, start_duration_sequence, musi
         durations_input_sequence = durations_input_sequence[1:]
 
     return prediction_output
+
+if __name__ == '__main__':
+    emotion = "delighted"
+    music_len = 100
+    noise_num = 3
+    save = True
+    main(emotion, music_len, noise_num, save)

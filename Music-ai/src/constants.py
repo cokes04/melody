@@ -1,6 +1,5 @@
 import os
 from pathlib import Path
-import math
 
 EMOTIONS = ["delighted", "gloomy", "relaxed"]
 

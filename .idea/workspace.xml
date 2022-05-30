@@ -20,13 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/dataset/create.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/util.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,19 +58,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\kog17\melody\Music-ai\dataset\2" />
-      <recent name="C:\Users\kog17\melody\Music-ai\models" />
-      <recent name="C:\Users\kog17\melody\Music-ai\dataset" />
-      <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
-      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kog17\melody\Music-ai\models\2" />
       <recent name="C:\Users\kog17\melody\Music-ai\models\before\2" />
       <recent name="C:\Users\kog17\melody\Music-ai\models\before" />
       <recent name="C:\Users\kog17\melody\Music-ai\dataset\before" />
       <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\2" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset" />
+      <recent name="C:\Users\kog17\melody\Music-ai\dataset\3" />
+      <recent name="C:\Users\kog17\PycharmProjects\melody\Music-ai\models" />
     </key>
   </component>
   <component name="RunManager" selected="Python.generate">
@@ -253,22 +248,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1653282661297" />
-    <state width="1575" height="256" key="GridCell.Tab.0.bottom" timestamp="1653390482989">
+    <state width="1580" height="284" key="GridCell.Tab.0.bottom" timestamp="1653921832529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1575" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
-    <state width="1575" height="256" key="GridCell.Tab.0.center" timestamp="1653390482989">
+    <state width="1580" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653921832529" />
+    <state width="1580" height="284" key="GridCell.Tab.0.center" timestamp="1653921832529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1575" height="256" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
-    <state width="1575" height="256" key="GridCell.Tab.0.left" timestamp="1653390482989">
+    <state width="1580" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653921832529" />
+    <state width="1580" height="284" key="GridCell.Tab.0.left" timestamp="1653921832529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1575" height="256" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
-    <state width="1575" height="256" key="GridCell.Tab.0.right" timestamp="1653390482989">
+    <state width="1580" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653921832529" />
+    <state width="1580" height="284" key="GridCell.Tab.0.right" timestamp="1653921832529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1575" height="256" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653390482989" />
+    <state width="1580" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653921832529" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1650542207484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -293,10 +288,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="869" y="219" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1653804373513" />
-    <state x="461" y="167" width="998" height="708" key="SettingsEditor" timestamp="1652331329295">
+    <state x="461" y="167" width="998" height="708" key="SettingsEditor" timestamp="1653921862895">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="167" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1652331329295" />
+    <state x="461" y="167" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1653921862895" />
     <state x="754" y="297" key="chooseDestDirectoryDialog" timestamp="1650469639806">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
