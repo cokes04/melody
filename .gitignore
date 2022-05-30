@@ -1,3 +1,6 @@
+.aws-sam
+*.bat
+
 Music-ai/data/**/*.mid
 Music-ai/data/**/*.midi
 

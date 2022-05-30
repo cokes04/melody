@@ -2,23 +2,17 @@ from music21 import *
 import numpy as np
 import time
 
-from dataset.load import *
-from model import *
+from constants import *
 
-def main(emotion, music_len, noise_num) :
-    print("Generate Main")
-    model, att_model = load_models()
-    data_for_emotion = load_data()
-
-    note_to_int, int_to_note, duration_to_int, int_to_duration = load_tables()
+def get_midi(model, data_for_emotion, emotion, music_len, noise_num, tables) :
+    note_to_int, int_to_note, duration_to_int, int_to_duration = tables
 
     random_index, start_notes_sequence, start_duration_sequence = get_start_sequence(data_for_emotion, emotion, noise_num, note_to_int, duration_to_int)
     prediction_output = generate(model, emotion, start_notes_sequence, start_duration_sequence, music_len)
-    midi_stream = convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=False)
-
+    midi_stream = convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index)
     return midi_stream
 
-def convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index, save=True) :
+def convert_midi(prediction_output, int_to_note, int_to_duration, emotion, random_index) :
     print("Convert Midi")
     midi_stream = stream.Stream()
     part = stream.Part()
@@ -54,12 +48,6 @@ def convert_midi(prediction_output, int_to_note, int_to_duration, emotion, rando
             new_note.duration = duration.Duration(duration_pattern)
             new_note.storedInstrument = instrument.Piano()
             part.append(new_note)
-
-
-    midi_stream = midi_stream.chordify()
-    if save :
-        timestr = time.strftime("%Y%m%d-%H%M%S")
-        midi_stream.write('midi', fp=os.path.join(OUTPUT_DIR, f'{emotion}-{random_index}-{timestr}.mid'))
 
     return midi_stream
 
