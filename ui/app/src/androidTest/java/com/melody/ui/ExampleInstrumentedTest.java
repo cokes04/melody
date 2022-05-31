@@ -1,4 +1,4 @@
-package com.example.melody;
+package com.melody.ui;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

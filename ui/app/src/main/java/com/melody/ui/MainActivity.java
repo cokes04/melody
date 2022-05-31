@@ -1,4 +1,4 @@
-package com.example.melody;
+package com.melody.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.navigation.ui.AppBarConfiguration;
 
-import com.example.melody.databinding.ActivityMainBinding;
+import com.melody.ui.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;

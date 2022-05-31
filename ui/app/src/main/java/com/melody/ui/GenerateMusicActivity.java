@@ -1,4 +1,4 @@
-package com.example.melody;
+package com.melody.ui;
 
 import android.content.Intent;
 import android.net.Uri;
