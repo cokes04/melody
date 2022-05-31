@@ -20,28 +20,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.aws-sam/build.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/.aws-sam/build.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/pipeline.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/registry.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/src/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/template.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Music-ai/data/data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Music-ai/data/distinct" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Music-ai/data/table" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/melody.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/melody.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/dataset/data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/dataset/distinct" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/dataset/table" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/melodyEnv.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/models/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/tmp/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/dataset/load.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/src/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/.aws-sam/build.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/pipeline.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/pipeline.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/registry.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/registry.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/src/tmp/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/models/model.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Music-ai/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,26 +68,47 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="exceleditor.install" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Music-ai/data" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kog17\melody\Music-ai\src\tmp" />
-      <recent name="C:\Users\kog17\melody\Music-ai\src" />
-      <recent name="C:\Users\kog17\melody\Music-ai" />
-      <recent name="C:\Users\kog17\melody" />
-      <recent name="C:\Users\kog17\melody\Music-ai\models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\melody\Music-ai\data" />
       <recent name="C:\Users\kog17\melody\Music-ai\src" />
       <recent name="C:\Users\kog17\melody\Music-ai" />
       <recent name="C:\Users\kog17\melody\Music-ai\dataset\2" />
       <recent name="C:\Users\kog17\melody\Music-ai\models" />
-      <recent name="C:\Users\kog17\melody\Music-ai\dataset" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kog17\melody\Music-ai\rel" />
+      <recent name="C:\Users\kog17\melody\Music-ai\release" />
+      <recent name="C:\Users\kog17\melody\Music-ai\models" />
+      <recent name="C:\Users\kog17\melody\Music-ai\src\tmp" />
+      <recent name="C:\Users\kog17\melody\Music-ai\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.generate">
+  <component name="RunManager" selected="Python.asd">
+    <configuration name="aa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="melody" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/release/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/release/src/aa.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="melody" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,7 +130,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="constants" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="asd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="melody" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,11 +138,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/release/src" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/constants.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/release/src/asd.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="asdasd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="melody" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/release/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/release/src/asdasd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,55 +193,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="load" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="melody" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/load.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="melody" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Music-ai/src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Music-ai/src/model.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.generate" />
-        <item itemvalue="Python.constants" />
+        <item itemvalue="Python.asd" />
+        <item itemvalue="Python.asdasd" />
+        <item itemvalue="Python.aa" />
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.load" />
-        <item itemvalue="Python.model" />
+        <item itemvalue="Python.generate" />
       </list>
     </recent_temporary>
   </component>
@@ -272,22 +266,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="428" y="74" width="752" height="691" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1653869107029" />
-    <state width="1580" height="284" key="GridCell.Tab.0.bottom" timestamp="1653921404999">
+    <state width="1611" height="284" key="GridCell.Tab.0.bottom" timestamp="1653985041428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1580" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653921404999" />
-    <state width="1580" height="284" key="GridCell.Tab.0.center" timestamp="1653921404998">
+    <state width="1611" height="284" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1653985041428" />
+    <state width="1611" height="284" key="GridCell.Tab.0.center" timestamp="1653985041428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1580" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653921404998" />
-    <state width="1580" height="284" key="GridCell.Tab.0.left" timestamp="1653921404998">
+    <state width="1611" height="284" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1653985041428" />
+    <state width="1611" height="284" key="GridCell.Tab.0.left" timestamp="1653985041427">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1580" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653921404998" />
-    <state width="1580" height="284" key="GridCell.Tab.0.right" timestamp="1653921404998">
+    <state width="1611" height="284" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1653985041427" />
+    <state width="1611" height="284" key="GridCell.Tab.0.right" timestamp="1653985041428">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1580" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653921404998" />
+    <state width="1611" height="284" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1653985041428" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1650542207484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
