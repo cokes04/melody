@@ -1,6 +1,11 @@
 package com.melody.ui;
 
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -21,7 +26,9 @@ import com.melody.ui.api.MusicApi;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -35,6 +42,12 @@ public class GenerateMusicActivity extends AppCompatActivity {
     private MusicApi musicApi;
     private Retrofit retrofit;
     private OkHttpClient okHttpClient;
+
+    private DownloadManager downloadManager;
+    private Long downloadQueueId;
+    private File downloadedfile;
+    private File directory = Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_DOWNLOADS + "/melody/musics");
 
     private ImageView uploadedImageView;
     private Button cammeraButton;
@@ -61,6 +74,7 @@ public class GenerateMusicActivity extends AppCompatActivity {
         musicApi = retrofit.create(MusicApi.class);
 
         uploadedImageView = findViewById(R.id.uploaded_image_view);
+
 
         cammeraButton = findViewById(R.id.take_pictures_button);
         cammeraButton.setOnClickListener( (View v) -> {
@@ -91,19 +105,9 @@ public class GenerateMusicActivity extends AppCompatActivity {
 
 
             Emotion emotion = Emotion.delighted;
-            int music_len = 100;
-            int noise_num = 50;
-            getMusic(emotion, music_len, noise_num);
-            //if(작곡 성공시)
-            /*if (true) {
-                Intent intent = new Intent(getApplicationContext(), PlayMusicActivity.class);
-                intent.putExtra(PlayMusicActivity.SET_MUSIC_KEY, R.raw.test*//*작곡된 음악 파일 ID*//*);
-                startActivity(intent);
-            }
-            //else(작곡 실패시)
-            else {
-                Toast.makeText(GenerateMusicActivity.this, "작곡 실패!", Toast.LENGTH_SHORT).show();
-            }*/
+            int music_len = 170;
+            int noise_num = 3;
+            getMusic(emotion, noise_num, music_len);
         });
     }
 
@@ -118,9 +122,21 @@ public class GenerateMusicActivity extends AppCompatActivity {
             Uri uri = data.getData();
             uploadedImageView.setImageURI(uri);
         }
-
-
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        IntentFilter completeFilter = new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
+        registerReceiver(downloadCompleteReceiver, completeFilter);
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        unregisterReceiver(downloadCompleteReceiver);
+    }
+
     private File createImageFile() throws IOException {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "JPEG_MELODY_" + timeStamp;
@@ -135,7 +151,7 @@ public class GenerateMusicActivity extends AppCompatActivity {
                 noise_num,
                 music_len
         );
-
+        System.out.println("Generate Music Requset");
         System.out.println(request.toString());
         Call<GenerateMusicResponse> call = musicApi.generateMusic(request);
         Toast.makeText(GenerateMusicActivity.this, "작곡 중입니다.", Toast.LENGTH_SHORT).show();
@@ -145,17 +161,102 @@ public class GenerateMusicActivity extends AppCompatActivity {
             public void onResponse(Call<GenerateMusicResponse> call, Response<GenerateMusicResponse> response) {
                 if (response.isSuccessful()) {
                     GenerateMusicResponse data = response.body();
+                    System.out.println("Generate Music Response");
                     System.out.println(data.toString());
 
+                    Uri uri = Uri.parse(data.getUrl());
+                    downloadMusic(uri);
+
                 } else {
+                    System.out.println("Generate Music Failed");
+                    System.out.println(response.toString());
                     Toast.makeText(GenerateMusicActivity.this, "음악 생성에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<GenerateMusicResponse> call, Throwable t) {
+                System.out.println("Generate Music Failed");
                 Toast.makeText(GenerateMusicActivity.this, "음악 생성에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                 t.printStackTrace();
             }
         });
     }
+
+    private void downloadMusic(Uri url) {
+        if (downloadManager == null) {
+            downloadManager = (DownloadManager) GenerateMusicActivity.this.getSystemService(Context.DOWNLOAD_SERVICE);
+        }
+
+        String fileName = url.getLastPathSegment();
+
+        if (!fileName.matches("^[0-9]+\\.mid")){
+            fileName = String.valueOf((int) Math.random() * (99999 - 10000 + 1) + 10000);
+            fileName += ".mid";
+        }
+        File file = new File(directory + "/" + fileName);
+
+        System.out.println("Download Music Start: " + url.toString());
+        System.out.println("File Path: " + file.toString());
+        DownloadManager.Request request = new DownloadManager.Request(url)
+                .setTitle("Downloading!")
+                .setDescription("Downloading!!")
+                .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                .setDestinationUri(Uri.fromFile(file))
+                .setAllowedOverMetered(true)
+                .setAllowedOverRoaming(true);
+
+        downloadQueueId = downloadManager.enqueue(request);
+        downloadedfile = file;
+    }
+
+
+    private BroadcastReceiver downloadCompleteReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            long reference = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+
+            if(downloadQueueId == reference){
+                DownloadManager.Query query = new DownloadManager.Query();  // 다운로드 항목 조회에 필요한 정보 포함
+                query.setFilterById(reference);
+                Cursor cursor = downloadManager.query(query);
+
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                int columnReason = cursor.getColumnIndex(DownloadManager.COLUMN_REASON);
+
+                int status = cursor.getInt(columnIndex);
+                int reason = cursor.getInt(columnReason);
+
+                cursor.close();
+
+                switch (status) {
+                    case DownloadManager.STATUS_SUCCESSFUL :
+                        Toast.makeText(GenerateMusicActivity.this, "다운로드를 완료하였습니다.", Toast.LENGTH_SHORT).show();
+                        System.out.println("Success Download Music");
+                        if (downloadedfile != null) {
+                            Intent intent1 = new Intent(getApplicationContext(), PlayMusicActivity.class);
+                            intent1.putExtra(PlayMusicActivity.SET_MUSIC_KEY, downloadedfile.getPath());
+                            startActivity(intent1);
+                        }
+                        break;
+
+                    case DownloadManager.STATUS_PAUSED :
+                        downloadedfile = null;
+                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent2);
+                        Toast.makeText(GenerateMusicActivity.this, "다운로드가 중단되었습니다.", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case DownloadManager.STATUS_FAILED :
+                        downloadedfile = null;
+                        Intent intent3 = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent3);
+                        Toast.makeText(GenerateMusicActivity.this, "다운로드가 취소되었습니다.", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        }
+    };
 }

@@ -2,6 +2,7 @@ package com.melody.ui;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +12,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class PlayMusicActivity extends AppCompatActivity {
-    public static final int NON_EXISTENT_MUSIC = -1;
+    public static final String NON_EXISTENT_MUSIC = "";
     public static final String SET_MUSIC_KEY = "music";
 
     private MediaPlayer mediaPlayer;
@@ -24,7 +25,7 @@ public class PlayMusicActivity extends AppCompatActivity {
     private Button playStopButton;
     private Button uploadMusicButton;
 
-    private int musicToPlay = NON_EXISTENT_MUSIC;
+    private String musicToPlay = NON_EXISTENT_MUSIC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +33,6 @@ public class PlayMusicActivity extends AppCompatActivity {
         setContentView(R.layout.activity_play_music);
 
         setMusicToPlayFromActivity();
-
-        //테스트용
-        if (!isExistsMusic())
-            musicToPlay = R.raw.test;
 
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         playStopButton = (Button) findViewById(R.id.control_music_button);
@@ -80,12 +77,14 @@ public class PlayMusicActivity extends AppCompatActivity {
 
     private void setMusicToPlayFromActivity(){
         Intent intent = getIntent();
-        int music = intent.getIntExtra(SET_MUSIC_KEY, -1);
-        musicToPlay = music;
+        String filePath = intent.getStringExtra(SET_MUSIC_KEY);
+        musicToPlay = filePath;
     }
 
     private void setMediaPlayer() {
-        mediaPlayer = MediaPlayer.create(PlayMusicActivity.this, musicToPlay);
+        System.out.println("Play Music Uri"+ musicToPlay);
+        Uri uri = Uri.parse(musicToPlay);
+        mediaPlayer = MediaPlayer.create(PlayMusicActivity.this, uri);
         seekbar.setMax( mediaPlayer.getDuration() );
 
         mediaPlayer.setOnCompletionListener( (MediaPlayer mediaPlayer) -> {
