@@ -1,5 +1,5 @@
-from constants import *
 import pickle
+from constants import *
 
 def load_dataset() :
     print("Load Dataset")

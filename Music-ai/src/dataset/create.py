@@ -4,6 +4,7 @@ import tensorflow.python.keras.utils as np_utils
 from functools import reduce
 
 from dataset.load import *
+from constants import *
 
 def main() :
     print("Crate Dataset Main")

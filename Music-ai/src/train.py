@@ -5,6 +5,7 @@ import os
 from model import *
 from dataset.load import *
 from dataset.create import *
+from constants import *
 
 #os.environ["TF_GPU_ALLOCATOR"]='cuda_malloc_async'
 gpus = tf.config.experimental.list_physical_devices('GPU')
