@@ -19,24 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Music-ai/data/data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/data/distinct" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Music-ai/data/table" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/melody.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/melody.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/.aws-sam/build.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/pipeline.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/pipeline.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/registry.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/registry.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/src/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/src/tmp/model.h5" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/models/model.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Music-ai/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/Music-ai/release/template.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="d816acf8-668c-4210-89d6-102cbbf56429" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
