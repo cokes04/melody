@@ -1,6 +1,7 @@
 package com.melody.ui;
 
 import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -49,6 +52,7 @@ public class GenerateMusicActivity extends AppCompatActivity {
     private File directory = Environment.getExternalStoragePublicDirectory(
             Environment.DIRECTORY_DOWNLOADS + "/melody/musics");
 
+    ProgressDialog dialog;
     private ImageView uploadedImageView;
     private Button cammeraButton;
     private Button galleryButton;
@@ -100,15 +104,14 @@ public class GenerateMusicActivity extends AppCompatActivity {
 
         generateButton = findViewById(R.id.generate_music_button);
         generateButton.setOnClickListener( (View v) -> {
-            // 여기서 작곡 모델 돌려서
-            // 음악 받고 저장 후
-
-
             Emotion emotion = Emotion.delighted;
-            int music_len = 170;
+            int music_len = 20;
             int noise_num = 3;
             getMusic(emotion, noise_num, music_len);
         });
+
+        dialog = new ProgressDialog(GenerateMusicActivity.this);
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
     }
 
     @Override
@@ -154,7 +157,6 @@ public class GenerateMusicActivity extends AppCompatActivity {
         System.out.println("Generate Music Requset");
         System.out.println(request.toString());
         Call<GenerateMusicResponse> call = musicApi.generateMusic(request);
-        Toast.makeText(GenerateMusicActivity.this, "작곡 중입니다.", Toast.LENGTH_SHORT).show();
 
         call.enqueue(new Callback<GenerateMusicResponse>() {
             @Override
@@ -168,18 +170,23 @@ public class GenerateMusicActivity extends AppCompatActivity {
                     downloadMusic(uri);
 
                 } else {
+                    dialog.dismiss();
                     System.out.println("Generate Music Failed");
                     System.out.println(response.toString());
-                    Toast.makeText(GenerateMusicActivity.this, "음악 생성에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(GenerateMusicActivity.this, "작곡에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<GenerateMusicResponse> call, Throwable t) {
+                dialog.dismiss();
                 System.out.println("Generate Music Failed");
-                Toast.makeText(GenerateMusicActivity.this, "음악 생성에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(GenerateMusicActivity.this, "작곡에 실패하였습니다.", Toast.LENGTH_SHORT).show();
                 t.printStackTrace();
             }
         });
+
+        dialog.setMessage("작곡이 진행중입니다.");
+        dialog.show();
     }
 
     private void downloadMusic(Uri url) {
@@ -209,7 +216,6 @@ public class GenerateMusicActivity extends AppCompatActivity {
         downloadedfile = file;
     }
 
-
     private BroadcastReceiver downloadCompleteReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -233,7 +239,7 @@ public class GenerateMusicActivity extends AppCompatActivity {
 
                 switch (status) {
                     case DownloadManager.STATUS_SUCCESSFUL :
-                        Toast.makeText(GenerateMusicActivity.this, "다운로드를 완료하였습니다.", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
                         System.out.println("Success Download Music");
                         if (downloadedfile != null) {
                             Intent intent1 = new Intent(getApplicationContext(), PlayMusicActivity.class);
