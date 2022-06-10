@@ -105,7 +105,7 @@ public class GenerateMusicActivity extends AppCompatActivity {
         generateButton = findViewById(R.id.generate_music_button);
         generateButton.setOnClickListener( (View v) -> {
             Emotion emotion = Emotion.delighted;
-            int music_len = 160;
+            int music_len = 20;
             int noise_num = 3;
             getMusic(emotion, noise_num, music_len);
         });
@@ -244,6 +244,8 @@ public class GenerateMusicActivity extends AppCompatActivity {
                         if (downloadedfile != null) {
                             Intent intent1 = new Intent(getApplicationContext(), PlayMusicActivity.class);
                             intent1.putExtra(PlayMusicActivity.SET_MUSIC_KEY, downloadedfile.getPath());
+                            if (photoUri != null)
+                                intent1.putExtra(PlayMusicActivity.SET_IMAGE_KEY , photoUri.toString());
                             startActivity(intent1);
                         }
                         break;

@@ -8,20 +8,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 public class PlayMusicActivity extends AppCompatActivity {
     public static final String NON_EXISTENT_MUSIC = "";
     public static final String SET_MUSIC_KEY = "music";
+    public static final String SET_IMAGE_KEY = "image";
 
     private MediaPlayer mediaPlayer;
 
     private Handler seekbarUpdateHandler = new Handler();
     private Runnable updateSeekbar = getUpdateSeekbarRunnable();
 
+    private ImageView imageView;
     private SeekBar seekbar;
-
     private Button playStopButton;
 
     private String musicToPlay = NON_EXISTENT_MUSIC;
@@ -31,10 +33,12 @@ public class PlayMusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_music);
 
-        setMusicToPlayFromActivity();
-
+        imageView = (ImageView) findViewById(R.id.imageView2);
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         playStopButton = (Button) findViewById(R.id.control_music_button);
+
+        setMusicToPlayFromActivity();
+        setImageToPlayFromActivity();
 
         playStopButton.setOnClickListener( (View view) -> {
             if (!isExistsMusic()){
@@ -57,7 +61,6 @@ public class PlayMusicActivity extends AppCompatActivity {
                 seekbarUpdateHandler.postDelayed(updateSeekbar, 0);
             }
 
-
         });
     }
 
@@ -73,6 +76,14 @@ public class PlayMusicActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String filePath = intent.getStringExtra(SET_MUSIC_KEY);
         musicToPlay = filePath;
+    }
+
+    private void setImageToPlayFromActivity(){
+        Intent intent = getIntent();
+        String filePath = intent.getStringExtra(SET_IMAGE_KEY);
+        if (filePath == null || filePath.isEmpty())
+            return;
+        imageView.setImageURI(Uri.parse(filePath));
     }
 
     private void setMediaPlayer() {
