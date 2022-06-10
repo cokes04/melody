@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private Button generateButton;
-    private Button playButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +30,6 @@ public class MainActivity extends AppCompatActivity {
         generateButton = findViewById(R.id.go_generate_button);
         generateButton.setOnClickListener( (View v) -> {
             Intent intent = new Intent(getApplicationContext(), GenerateMusicActivity.class);
-            startActivity(intent);
-        });
-
-        playButton = findViewById(R.id.go_play_button);
-        playButton.setOnClickListener( (View v) -> {
-            Intent intent = new Intent(getApplicationContext(), PlayMusicActivity.class);
             startActivity(intent);
         });
     }

@@ -36,7 +36,6 @@ public class PlayMusicActivity extends AppCompatActivity {
 
         seekbar = (SeekBar) findViewById(R.id.seekBar);
         playStopButton = (Button) findViewById(R.id.control_music_button);
-        uploadMusicButton = (Button) findViewById(R.id.upload_music_button);
 
         playStopButton.setOnClickListener( (View view) -> {
             if (!isExistsMusic()){
