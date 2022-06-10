@@ -23,7 +23,6 @@ public class PlayMusicActivity extends AppCompatActivity {
     private SeekBar seekbar;
 
     private Button playStopButton;
-    private Button uploadMusicButton;
 
     private String musicToPlay = NON_EXISTENT_MUSIC;
 
@@ -59,10 +58,6 @@ public class PlayMusicActivity extends AppCompatActivity {
             }
 
 
-        });
-
-        uploadMusicButton.setOnClickListener((View view) ->{
-            // 음악 불러오는 기능 구현
         });
     }
 

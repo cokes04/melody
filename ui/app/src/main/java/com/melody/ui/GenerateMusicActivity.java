@@ -105,7 +105,7 @@ public class GenerateMusicActivity extends AppCompatActivity {
         generateButton = findViewById(R.id.generate_music_button);
         generateButton.setOnClickListener( (View v) -> {
             Emotion emotion = Emotion.delighted;
-            int music_len = 20;
+            int music_len = 160;
             int noise_num = 3;
             getMusic(emotion, noise_num, music_len);
         });
