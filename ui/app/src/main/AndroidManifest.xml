@@ -16,6 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Melody"
         tools:targetApi="31">
+
+        <activity
+            android:name="com.melody.ui.IntroActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+
         <activity
             android:name="com.melody.ui.GenerateMusicActivity"
             android:exported="false" />
