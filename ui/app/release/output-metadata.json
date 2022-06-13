@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.example.melody",
+  "applicationId": "com.melody.ui",
   "variantName": "release",
   "elements": [
     {
